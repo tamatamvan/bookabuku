@@ -11,6 +11,7 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from '@heroicons/react/24/solid';
+import { BookOpenIcon, HeartIcon } from '@heroicons/react/24/outline';
 
 async function fetchBooks(params: { page: number; limit: number }) {
   const url = apiUrl('/books', {
@@ -63,7 +64,17 @@ export default async function Home({ searchParams }: THomeProps) {
           <div className="flex flex-col">
             <h3 className="text-lg font-bold">{book.title}</h3>
             <p className="text-sm">by: {book.author}</p>
-            <Link href={`/book/${book.id}`}>Read more</Link>
+            <div className="my-2">
+              <Link
+                href={`/book/${book.id}`}
+                className="flex items-center my-1"
+              >
+                <BookOpenIcon className="h-6 w-6 mr-2" /> Read more
+              </Link>
+              <button className="flex items-center my-1">
+                <HeartIcon className="h-6 w-6 mr-2" /> Add to favorites
+              </button>
+            </div>
           </div>
         </div>
       ))}
