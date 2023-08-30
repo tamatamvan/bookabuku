@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Merriweather, Merriweather_Sans } from 'next/font/google';
 
-import { HeartIcon } from '@heroicons/react/24/solid';
+import { HeartIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
 
@@ -38,7 +38,7 @@ export default function RootLayout({
               <h1
                 className={clsx(
                   merriweather.className,
-                  'text-3xl md:text-4xl font-bold underline mb-2'
+                  'text-4xl font-bold underline md:mb-2'
                 )}
               >
                 bookabuku
@@ -49,10 +49,10 @@ export default function RootLayout({
             </Link>
             <Link
               href="/favorites"
-              className="flex items-center hover:underline ease-linear transition-all "
+              className="flex flex-col justify-center items-center hover:underline ease-linear transition-all shrink-0"
             >
-              <HeartIcon className="w-8 h-8 fill-red-600 mr-2 md:w-6 md:h-6 shrink-0" />
-              <span className="hidden md:block shrink-0">Your Favorites</span>
+              <HeartIcon className="w-6 h-6 md:w-8 md:h-8 fill-red-600" />
+              <span className="block shrink-0 text-sm">My Favs</span>
             </Link>
           </div>
           <div className="w-full">{children}</div>
