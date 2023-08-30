@@ -3,16 +3,13 @@ import './globals.css';
 import clsx from 'clsx';
 
 import type { Metadata } from 'next';
-import { Merriweather, Merriweather_Sans } from 'next/font/google';
+import { Merriweather_Sans } from 'next/font/google';
 
 import { HeartIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
+import { HeadingText } from '~/components/heading-text';
 
-const merriweather = Merriweather({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-});
 const merriweatherSans = Merriweather_Sans({
   weight: ['400', '700'],
   subsets: ['latin'],
@@ -35,14 +32,12 @@ export default function RootLayout({
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="w-full my-8">
-              <h1
-                className={clsx(
-                  merriweather.className,
-                  'text-4xl font-bold underline md:mb-2'
-                )}
+              <HeadingText
+                as="h1"
+                className="text-4xl font-bold underline md:mb-2"
               >
                 bookabuku
-              </h1>
+              </HeadingText>
               <p className="hidden italic text-sm md:inline-block">
                 Find book recommendations you will absolutely love
               </p>
