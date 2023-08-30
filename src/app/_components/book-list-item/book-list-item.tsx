@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { BookOpenIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { BookOpenIcon } from '@heroicons/react/24/outline';
 
 import { z } from 'zod';
 import { BookBaseSchema } from '~/schemas/book';
+
+import { FavoriteButton } from '~/components/favorite-button';
 
 type BookListItemProps = z.infer<typeof BookBaseSchema>;
 
@@ -26,9 +28,7 @@ export function BookListItem(book: BookListItemProps) {
           <Link href={`/book/${book.id}`} className="flex items-center my-1">
             <BookOpenIcon className="h-6 w-6 mr-2" /> Read more
           </Link>
-          <button className="flex items-center my-1">
-            <HeartIcon className="h-6 w-6 mr-2" /> Add to favorites
-          </button>
+          <FavoriteButton bookId={book.id} />
         </div>
       </div>
     </div>
