@@ -1,13 +1,16 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+import clsx from 'clsx';
+
+import { z } from 'zod';
+import { BookBaseSchema } from '~/schemas/book';
+import { apiUrl } from '~/lib/apiUrl';
+
 import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from '@heroicons/react/24/solid';
-import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
-import { z } from 'zod';
-import { apiUrl } from '~/lib/apiUrl';
-import { BookBaseSchema } from '~/schemas/book';
 
 async function fetchBooks(params: { page: number; limit: number }) {
   const url = apiUrl('/books', {
@@ -60,6 +63,7 @@ export default async function Home({ searchParams }: THomeProps) {
           <div className="flex flex-col">
             <h3 className="text-lg font-bold">{book.title}</h3>
             <p className="text-sm">by: {book.author}</p>
+            <Link href={`/book/${book.id}`}>Read more</Link>
           </div>
         </div>
       ))}

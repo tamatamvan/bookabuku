@@ -9,5 +9,5 @@ export const BookBaseSchema = z.object({
 
 export const BookSchema = BookBaseSchema.extend({
   description: z.string(),
-  publicationDate: z.date(),
+  publicationDate: z.string(),
 });
