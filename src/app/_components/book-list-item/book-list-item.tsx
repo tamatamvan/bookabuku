@@ -19,7 +19,6 @@ export function BookListItem(book: BookListItemProps) {
         src={book.cover}
         width={100}
         height={150}
-        objectFit="contain"
       />
       <div className="flex flex-col">
         <h3 className="text-lg font-bold">{book.title}</h3>
