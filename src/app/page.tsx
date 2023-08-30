@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import { z } from 'zod';
 import { BookBaseSchema } from '~/schemas/book';
-import { apiUrl } from '~/lib/apiUrl';
+import { apiUrl } from '~/lib/api-url';
 
 import {
   ChevronDoubleLeftIcon,

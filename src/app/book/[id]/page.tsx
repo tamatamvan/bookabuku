@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { format } from 'date-fns';
 
-import { apiUrl } from '~/lib/apiUrl';
+import { apiUrl } from '~/lib/api-url';
 import { BookSchema } from '~/schemas/book';
 
 async function getBookDetail(id: number | string) {
