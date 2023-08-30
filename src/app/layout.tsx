@@ -1,11 +1,7 @@
 import './globals.css';
 
-import clsx from 'clsx';
-
 import type { Metadata } from 'next';
 import { Merriweather_Sans } from 'next/font/google';
-
-import { HeartIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
 import { HeadingText } from '~/components/heading-text';
@@ -41,13 +37,6 @@ export default function RootLayout({
               <p className="hidden italic text-sm md:inline-block">
                 Find book recommendations you will absolutely love
               </p>
-            </Link>
-            <Link
-              href="/favorites"
-              className="flex flex-col justify-center items-center hover:underline ease-linear transition-all shrink-0"
-            >
-              <HeartIcon className="w-6 h-6 md:w-8 md:h-8 fill-red-600" />
-              <span className="block shrink-0 text-sm">My Favs</span>
             </Link>
           </div>
           <div className="w-full">{children}</div>
