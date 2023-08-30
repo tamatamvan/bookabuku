@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={merriweatherSans.className}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            <div className="w-full my-8">
+            <Link href="/" className="w-full my-8">
               <h1
                 className={clsx(
                   merriweather.className,
@@ -46,7 +46,7 @@ export default function RootLayout({
               <p className="hidden italic text-sm md:inline-block">
                 Find book recommendations you will absolutely love
               </p>
-            </div>
+            </Link>
             <Link
               href="/favorites"
               className="flex items-center hover:underline ease-linear transition-all "
