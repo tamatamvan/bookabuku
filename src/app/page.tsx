@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: THomeProps) {
   });
 
   return (
-    <main className="max-w-full flex flex-wrap items-start">
+    <main className="flex max-w-full flex-wrap items-start">
       {books.map((book) => (
         <BookListItem key={`book-item-${book.id}`} {...book} />
       ))}

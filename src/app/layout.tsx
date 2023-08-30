@@ -26,15 +26,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={merriweatherSans.className}>
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="w-full my-8">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="my-8 w-full">
               <HeadingText
                 as="h1"
                 className="text-4xl font-bold underline md:mb-2"
               >
                 bookabuku
               </HeadingText>
-              <p className="hidden italic text-sm md:inline-block">
+              <p className="hidden text-sm italic md:inline-block">
                 Find book recommendations you will absolutely love
               </p>
             </Link>

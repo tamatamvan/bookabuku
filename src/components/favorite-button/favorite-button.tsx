@@ -34,12 +34,12 @@ export function FavoriteButton({
 
   return (
     <button
-      className="flex items-center my-1"
+      className="my-1 flex items-center"
       onClick={() => toggleFavorite(bookId)}
       {...otherProps}
     >
       <HeartIcon
-        className={clsx('h-6 w-6 mr-2', { 'fill-red-600': isFavorite })}
+        className={clsx('mr-2 h-6 w-6', '', { 'fill-red-600': isFavorite })}
       />{' '}
       {isFavorite ? "You've liked this" : 'Add to favorites'}
     </button>

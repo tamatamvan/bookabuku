@@ -12,9 +12,9 @@ type BookListItemProps = z.infer<typeof BookBaseSchema>;
 
 export function BookListItem(book: BookListItemProps) {
   return (
-    <div className="mb-4 w-full flex md:w-1/3">
+    <div className="mb-4 flex w-full md:w-1/3">
       <Image
-        className="aspect-[2/3] mr-4"
+        className="mr-4 aspect-[2/3]"
         alt={`Cover of ${book.title}`}
         src={book.cover}
         width={100}
@@ -24,8 +24,8 @@ export function BookListItem(book: BookListItemProps) {
         <h3 className="text-lg font-bold">{book.title}</h3>
         <p className="text-sm">by: {book.author}</p>
         <div className="my-2">
-          <Link href={`/book/${book.id}`} className="flex items-center my-1">
-            <BookOpenIcon className="h-6 w-6 mr-2" /> Read more
+          <Link href={`/book/${book.id}`} className="my-1 flex items-center">
+            <BookOpenIcon className="mr-2 h-6 w-6" /> Read more
           </Link>
           <FavoriteButton bookId={book.id} />
         </div>

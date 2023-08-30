@@ -28,9 +28,9 @@ export default async function BookDetailPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">{book.title}</h1>
+      <h1 className="mb-4 text-2xl font-bold">{book.title}</h1>
       <Image
-        className="aspect-[2/3] mb-4"
+        className="mb-4 aspect-[2/3]"
         alt={`Cover of ${book.title}`}
         src={book.cover}
         width={200}
@@ -52,7 +52,7 @@ export default async function BookDetailPage({
       <div className="my-4 flex flex-col">
         <FavoriteButton bookId={book.id} />
         <Link href="/" className="flex items-center">
-          <MagnifyingGlassIcon className="w-6 h-6 mr-2" /> Explore other books
+          <MagnifyingGlassIcon className="mr-2 h-6 w-6" /> Explore other books
         </Link>
       </div>
     </div>

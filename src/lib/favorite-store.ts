@@ -26,6 +26,6 @@ export const useFavoriteStore = create<State & Actions>()(
     }),
     {
       name: 'favorite-store',
-    }
-  )
+    },
+  ),
 );

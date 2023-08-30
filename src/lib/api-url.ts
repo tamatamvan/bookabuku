@@ -1,6 +1,6 @@
 export function apiUrl(
   path: string,
-  searchParams?: Record<string, string | number>
+  searchParams?: Record<string, string | number>,
 ) {
   const url = new URL(`/api/${path}`, process.env.NEXT_PUBLIC_BASE_URL);
 

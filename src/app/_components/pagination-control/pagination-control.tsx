@@ -17,10 +17,10 @@ export function PaginationControl({ page, pageCount }: PaginationControlProps) {
   const isLastPage = page >= pageCount;
 
   return (
-    <div className="flex justify-center items-center w-full my-8">
+    <div className="my-8 flex w-full items-center justify-center">
       {!isFirstPage && (
         <Link href={`/?page=${page - 1}`}>
-          <ChevronDoubleLeftIcon className="h-6 w-6 shrink-0 mr-2" />{' '}
+          <ChevronDoubleLeftIcon className="mr-2 h-6 w-6 shrink-0" />{' '}
         </Link>
       )}
       <div
@@ -33,7 +33,7 @@ export function PaginationControl({ page, pageCount }: PaginationControlProps) {
       </div>
       {!isLastPage && (
         <Link href={`/?page=${page + 1}`}>
-          <ChevronDoubleRightIcon className="h-6 w-6 shrink-0 ml-2" />
+          <ChevronDoubleRightIcon className="ml-2 h-6 w-6 shrink-0" />
         </Link>
       )}
     </div>
