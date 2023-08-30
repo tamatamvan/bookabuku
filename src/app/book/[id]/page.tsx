@@ -1,9 +1,13 @@
 import Image from 'next/image';
 
+import Link from 'next/link';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+
 import { format } from 'date-fns';
 
 import { apiUrl } from '~/lib/api-url';
 import { BookSchema } from '~/schemas/book';
+import { FavoriteButton } from '~/components/favorite-button';
 
 async function getBookDetail(id: number | string) {
   const bookResp = await fetch(apiUrl(`/books/${id}`));
@@ -45,6 +49,12 @@ export default async function BookDetailPage({
         <br />
         {book.description}
       </p>
+      <div className="my-4 flex flex-col">
+        <FavoriteButton bookId={book.id} />
+        <Link href="/" className="flex items-center">
+          <MagnifyingGlassIcon className="w-6 h-6 mr-2" /> Explore other books
+        </Link>
+      </div>
     </div>
   );
 }

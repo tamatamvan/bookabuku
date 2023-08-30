@@ -5,12 +5,16 @@ import clsx from 'clsx';
 
 import { useStore } from '~/lib/use-store';
 import { useFavoriteStore } from '~/lib/favorite-store';
+import { ComponentProps } from 'react';
 
 type FavoriteButtonProps = {
   bookId: number;
 };
 
-export function FavoriteButton({ bookId }: FavoriteButtonProps) {
+export function FavoriteButton({
+  bookId,
+  ...otherProps
+}: FavoriteButtonProps & ComponentProps<'button'>) {
   const favorites = useStore(useFavoriteStore, (state) => state.favorites);
 
   const { like, unlike } = useFavoriteStore((action) => ({
@@ -32,6 +36,7 @@ export function FavoriteButton({ bookId }: FavoriteButtonProps) {
     <button
       className="flex items-center my-1"
       onClick={() => toggleFavorite(bookId)}
+      {...otherProps}
     >
       <HeartIcon
         className={clsx('h-6 w-6 mr-2', { 'fill-red-600': isFavorite })}

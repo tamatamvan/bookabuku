@@ -1,5 +1,7 @@
 // to handle error mismatch between server and client rendered HTML content
 // due to favourites data being stored in localStorage
+// ref: https://docs.pmnd.rs/zustand/integrations/persisting-store-data#usage-in-next.js
+
 import { useState, useEffect } from 'react';
 
 export const useStore = <T, F>(
