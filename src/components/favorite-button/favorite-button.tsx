@@ -3,7 +3,7 @@
 import { HeartIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 
-import { shallow } from 'zustand/shallow';
+import { useStore } from '~/lib/use-store';
 import { useFavoriteStore } from '~/lib/favorite-store';
 
 type FavoriteButtonProps = {
@@ -11,13 +11,14 @@ type FavoriteButtonProps = {
 };
 
 export function FavoriteButton({ bookId }: FavoriteButtonProps) {
-  const [favorites, like, unlike] = useFavoriteStore((store) => [
-    store.favorites,
-    store.like,
-    store.unlike,
-  ]);
+  const favorites = useStore(useFavoriteStore, (state) => state.favorites);
 
-  const isFavorite = favorites.includes(bookId);
+  const { like, unlike } = useFavoriteStore((action) => ({
+    like: action.like,
+    unlike: action.unlike,
+  }));
+
+  const isFavorite = favorites?.includes(bookId);
 
   const toggleFavorite = (bookId: number) => {
     if (isFavorite) {
