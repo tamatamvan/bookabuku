@@ -35,7 +35,6 @@ export default async function BookDetailPage({
         src={book.cover}
         width={200}
         height={300}
-        objectFit="contain"
       />
       <p className="mb-2">
         <span className="font-bold">Author:</span> {book.author}
