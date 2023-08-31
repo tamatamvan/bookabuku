@@ -27,11 +27,11 @@ async function fetchBooks(params: { page: number; limit: number }) {
   };
 }
 
-type THomeProps = {
+type HomeProps = {
   searchParams?: Record<string, string | string[]>;
 };
 
-export default async function Home({ searchParams }: THomeProps) {
+export default async function Home({ searchParams }: HomeProps) {
   const { page, pageCount, books } = await fetchBooks({
     page: parseInt((searchParams?.page as string) ?? 1),
     limit: 5,
