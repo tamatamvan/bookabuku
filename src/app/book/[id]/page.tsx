@@ -35,6 +35,7 @@ export default async function BookDetailPage({
         src={book.cover}
         width={200}
         height={300}
+        priority
       />
       <p className="mb-2">
         <span className="font-bold">Author:</span> {book.author}
