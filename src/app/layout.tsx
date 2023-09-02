@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={merriweatherSans.className}>
+      <body className={`min-h-screen ${merriweatherSans.className}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="my-8 w-full">
